@@ -16,7 +16,7 @@ const renderItems = ref(true)
         <div class="px-5 flex flex-row">
             <div class="flex flex-col">
                 <label for="modelValue">{{ inputTitle }}</label>
-                <input min="0"  :value="modelValue" @input="$emit('update:modelValue', ($event.target as any)?.value)"
+                <input min="0"  :value="modelValue" @input="$emit('update:modelValue', parseInt(($event.target as any)?.value))"
                     name="modelValue" class="text-black w-2/3" type="number" />
             </div>
             <div class="flex flex-col">

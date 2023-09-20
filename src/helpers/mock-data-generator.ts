@@ -1,3 +1,6 @@
+import { Association } from "../models/association.model";
+import { Item } from "../models/item.model";
+
 const exampleItem = {
     id: "",
     title: "Lorem Ipsum",
@@ -46,7 +49,7 @@ const exampleItem = {
           title: item.title + ' - ' + otherItem.title,
           sourceId: item.id,
           targetId: id
-        } as Association
+        } as Association;
   
         return [...acc, ass];
       }, [] as Association[]

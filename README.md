@@ -1,1 +1,3 @@
-# vue-web-worker-example
+# Vue Web Worker Example
+
+![alt image](./page.png)

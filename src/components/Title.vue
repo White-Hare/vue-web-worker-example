@@ -6,13 +6,13 @@ defineProps({
     },
     enableWebWorkers: Boolean
 });
-defineEmits(['update:enableWebWorkers']);
+defineEmits(['update:enableWebWorkers', 'refresh']);
 
 </script>
 
 <template>
     <div class="flex flex-row justify-between mx-2 py-3">
-        <div>
+        <div class="flex flex-row items-center">
             <div class="flex flex-row">
                 <label for="enableWebWorkers">
                     <h2 class="text-lg font-bold">
@@ -21,6 +21,11 @@ defineEmits(['update:enableWebWorkers']);
                 </label>
                 <input :value="enableWebWorkers" @input="$emit('update:enableWebWorkers', ($event.target as any)?.value)"
                     name="enableWebWorkers" class="ml-3" type="checkbox" />
+            </div>
+            <div>
+                <button @click="$emit('refresh')" class="border-4 border-black rounded ml-8 py-1 px-3 hover:bg-gray-300 active:bg-gray-400">
+                    Refresh
+                </button>
             </div>
         </div>
         <div>

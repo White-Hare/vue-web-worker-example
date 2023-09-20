@@ -33,15 +33,18 @@ function updateItems(numberOfItems: number, assosicationPerItem: number) {
 
 provide(ITEMS_KEY, itemsDict);
 
+function refresh(){
+  updateItems(numberOfItems.value, assosicationPerItem.value);
+}
 
-watch([numberOfItems, assosicationPerItem], () => updateItems(numberOfItems.value, assosicationPerItem.value), { immediate: true });
+watch([numberOfItems, assosicationPerItem], () => refresh(), { immediate: true });
 </script>
 
 
 <template>
 
   <div>
-    <Title v-model="enableWebWorkers" :generation-time="generationTime"/>
+    <Title v-model="enableWebWorkers" @refresh="refresh()" :generation-time="generationTime"/>
     <div class="grid grid-cols-2 text-white bg-gray-900">
       <Panel title="Items" input-title="Number Of Items" v-model="numberOfItems">
         <div class="grid grid-cols-3 p-5 gap-3">

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import vueLogo from '../assets/vue.svg';
 defineProps({
     generationTime: {
         type: Number,
@@ -34,7 +35,7 @@ defineEmits(['check', 'refresh']);
                 Web Workers
             </h1>
             <div class="w-100 flex justify-center">
-                <img class="rotating-image" src="/src/assets/vue.svg" />
+                <img class="rotating-image" :src="vueLogo" />
             </div>
         </div>
         <div>

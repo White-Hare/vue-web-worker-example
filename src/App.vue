@@ -28,7 +28,7 @@ const assosications = ref([] as Association[]);
 const itemsDict = ref({} as Record<string, Item>);
 
 
-let worker = vueuse.useWebWorker('/worker.js');
+let worker = vueuse.useWebWorker(`${import.meta.env.BASE_URL}worker.js`);
 
 
 function generationProcess(numberOfItems: number, assosicationPerItem: number) {
